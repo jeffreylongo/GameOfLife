@@ -30,13 +30,19 @@ namespace GameOfLife
             Grid.showGrid(newGrid);
 
             //make a loop so we dont have to keep creating variables and showing them. 
+
             while (stillPlaying == true)
             {
-                    Console.ReadKey();
-                    Grid.showGrid(nextGenGrid);
-                    var nxt = Grid.GetNextGenGrid(nextGenGrid);
-                    Grid.showGrid(nxt);
-                    nextGenGrid = nxt;
+                var input = Console.ReadLine();
+                if (input.ToLower() == "q")
+                {
+                    stillPlaying = false;
+                }
+                Grid.showGrid(nextGenGrid);
+                var nxt = Grid.GetNextGenGrid(nextGenGrid);
+                Grid.showGrid(nxt);
+                nextGenGrid = nxt;
+
             }
         }
     }
