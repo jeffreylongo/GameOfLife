@@ -24,6 +24,7 @@ namespace GameOfLife
 
             //show welcome message
             Services.WelcomeMessage();
+            Console.ReadKey();
 
             //Show the current grid
             Grid.showGrid(newGrid);
