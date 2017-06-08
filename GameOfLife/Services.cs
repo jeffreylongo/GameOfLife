@@ -25,7 +25,7 @@ namespace GameOfLife
 
         public static void WelcomeMessage()
         {
-            Console.WriteLine("Welcome to the Game of Life: Press or Hold ::Return:: to run simulation or Press ::Q:: at any time to Quit.");
+            Console.WriteLine("Welcome to the Game of Life: Press or Hold ::Return:: to run simulation or Enter ::Q:: at any time to Quit.");
         }
     }
 }

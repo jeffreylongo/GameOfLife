@@ -24,16 +24,17 @@ namespace GameOfLife
 
             //show welcome message
             Services.WelcomeMessage();
+            //prompt for user input to start. 
             Console.ReadKey();
 
             //Show the current grid
             Grid.showGrid(newGrid);
 
             //make a loop so we dont have to keep creating variables and showing them. 
-
             while (stillPlaying == true)
             {
                 var input = Console.ReadLine();
+                //lets make a way out. 
                 if (input.ToLower() == "q")
                 {
                     stillPlaying = false;
