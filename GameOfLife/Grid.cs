@@ -46,9 +46,9 @@ namespace GameOfLife
             var gridCols = grid.GetUpperBound(1);
             var nextGrid = new int[gridRows + 1, gridCols + 1];
 
-            for (int i = 0; i < gridRows; i++)
+            for (int i = 1; i < gridRows; i++)
             {
-                for (int j = 0; j < gridCols; j++)
+                for (int j = 1; j < gridCols; j++)
                 {
                     var liveNeighbors = Grid.GetLiveNeighborCell(grid, i, j);
 
@@ -79,7 +79,6 @@ namespace GameOfLife
                 Console.Write("0");
                 Console.WriteLine("");
             }
-            Console.WriteLine("-------------");
         }
     }
 }

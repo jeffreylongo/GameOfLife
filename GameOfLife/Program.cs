@@ -17,10 +17,12 @@ namespace GameOfLife
             var seedMatrix = Services.GenerateSeed(rows, cols);
 
             var newGrid = Grid.CreateTheGrid(seedMatrix);
-            //var nextGenGrid = Grid.GetNextGenGrid(newGrid);
+            var nextGenGrid = Grid.GetNextGenGrid(newGrid);
 
             Grid.showGrid(newGrid);
-            //Grid.showGrid(nextGenGrid);
+            Grid.showGrid(nextGenGrid);
+
+
             Console.ReadKey();
         }
     }
