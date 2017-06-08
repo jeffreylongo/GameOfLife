@@ -8,6 +8,7 @@ namespace GameOfLife
 {
     class Grid
     {
+        //Create a Grid for the data
         public static int[,] CreateTheGrid(int[,] seedData)
         {
             var rows = seedData.GetUpperBound(0) + 1;
@@ -24,6 +25,7 @@ namespace GameOfLife
             return grid;
         }
 
+        //Figure out what cells are alive
         public static int GetLiveNeighborCell(int[,] grid, int row, int col)
         {
             var total = 0;
@@ -40,6 +42,7 @@ namespace GameOfLife
             return grid[row, col] == 1 ? total - 1 : total;
         }
 
+        //generate the next grid depending on the layout of the grid
         public static int[,] GetNextGenGrid(int[,] grid)
         {
             var gridRows = grid.GetUpperBound(0);
@@ -65,6 +68,7 @@ namespace GameOfLife
             return nextGrid;
         }
 
+        //Actually Display the Grid
         public static void showGrid(int[,] grid)
         {
             var rowCount = grid.GetUpperBound(0);
