@@ -22,5 +22,11 @@ namespace GameOfLife
             }
             return matrix;
         }
+
+        public static string WelcomeMessage()
+        {
+            var msg = "Welcome to the Game of Life: Press or Hold ::Return:: to run simulation or Press ::Q:: at any time to Quit.";
+            return msg;
+        }
     }
 }

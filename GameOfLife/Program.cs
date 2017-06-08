@@ -11,8 +11,8 @@ namespace GameOfLife
     {
         static void Main(string[] args)
         {
-            var rows = 20;
-            var cols = 20;
+            var rows = 29;
+            var cols = 100;
             var stillPlaying = true;
 
             var seedMatrix = Services.GenerateSeed(rows, cols);
@@ -21,22 +21,22 @@ namespace GameOfLife
             var newGrid = Grid.CreateTheGrid(seedMatrix);
             //Create the next gen grid
             var nextGenGrid = Grid.GetNextGenGrid(newGrid);
-            var nxtnxtGenGrid = Grid.GetNextGenGrid(nextGenGrid);
+
+            //show welcome message
+            Services.WelcomeMessage();
 
             //Show the current grid
             Grid.showGrid(newGrid);
 
-            //Show the nextgen grid. 
-            Grid.showGrid(nextGenGrid);
-
+            //make a loop so we dont have to keep creating variables and showing them. 
             while (stillPlaying == true)
             {
-                Grid.GetNextGenGrid(nxtnxtGenGrid);
-                Grid.showGrid(nxtnxtGenGrid);
+                    Console.ReadKey();
+                    Grid.showGrid(nextGenGrid);
+                    var nxt = Grid.GetNextGenGrid(nextGenGrid);
+                    Grid.showGrid(nxt);
+                    nextGenGrid = nxt;
             }
-
-
-            Console.ReadKey();
         }
     }
 }
